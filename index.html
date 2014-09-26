@@ -1,0 +1,53 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tinder</title>
+  <!-- <link rel="stylesheet" href="bootstrap.css"> -->
+</head>
+<body>
+
+  <button class="facebook-log-in">Log in via Facebook</button>
+  <button class="facebook-log-out">Log Out</button>
+  <button class="test-users">Populate Test Data</button>
+  <br>
+  <button class="blah">Add Meets Criteria</button>
+  <button class="show-meets-criteria">Show Meets Criteria</button>
+  
+  <button id="dislike">Dislike</button>
+  <button id="like">Like</button>
+
+  <button id="show-matches">Show Matches</button>
+
+  <div class="meets-criteria">
+    <img src="" class="meets-criteria-img">
+  </div>
+
+
+  <div>
+  <form action="">
+    <label for="gender">Looking for:</label><br>
+    <input type="radio" name="gender" value="female">Female<br>
+    <input type="radio" name="gender" value="male">Male<br>
+    
+    <label for="gender">Minimum Age I'm Looking For:</label><br>
+    <input type="number" name="min_age" id="min_age" min="18"><br>
+
+    <label for="gender">Maximum Age I'm Looking For:</label><br>
+    <input type="number" name="min_age" id="max_age" max="100"><br>
+
+    <input type="submit" id="submit-btn">
+  </form>
+  </div>
+
+
+
+  <div class="user">
+  </div>
+
+
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script> 
+  <script src="https://cdn.firebase.com/js/simple-login/1.6.4/firebase-simple-login.js"></script>
+  <script src="javascript/main.js"></script>
+</body>
+</html>
