@@ -11,11 +11,6 @@ function get_location() {
   }
 }
 
-function show_map(position) {
-  var latitude = position.coords.latitude;
-  var longitude = position.coords.longitude;
-  // let's show a map or do something interesting!
-}
 
 // guaranteed properties
 // coords.latitude
@@ -37,6 +32,12 @@ function geoError() {
 
 function lookup_location() {
   geoPosition.getCurrentPosition(show_map, show_map_error);
+}
+
+function show_map(position) {
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+  // let's show a map or do something interesting!
 }
 
 function show_map_error() {
