@@ -1,61 +1,3 @@
-  
-
-  var isNewUser = true;
-  var currentUser = null;
-  var myRef = new Firebase("https://tinder.firebaseio.com");
-
-  var authClient = new FirebaseSimpleLogin(myRef, function(error, user) { 
-    if (error) {
-      console.log(error);
-    } else if (user) {
-      // user authenticated with Firebase
-      console.log("isNewUser checking started");
-        var linkToUserInfo = "https://tinder.firebaseio.com/users/" + user.uid;
-
-        var userRef = new Firebase( linkToUserInfo );
-        
-        userRef.once('value', function(snap) {
-          console.log("here's the snap!");
-          console.log(snap.val());
-          currentUser = snap.val();
-        });
-
-        // // if currentUser exists then isNewUser = false
-        if ( currentUser !== null && currentUser !== '' && currentUser !== undefined) {
-          console.log("false event");
-          isNewUser = false;
-        }
-
-      // check users firebase if user exists
-      if ( isNewUser ) {
-        // save new user's profile into Firebase under their user_id
-        myRef.set({
-          provider: user.provider,
-          providerId: user.id,
-          displayName: user.displayName,
-          // firstName: user.first_name,
-          gender: user.thirdPartyUserData.gender,
-          age: user.thirdPartyUserData.age_range.min,
-          picUrl: user.thirdPartyUserData.picture.data.url
-        });
-      }
-        currentUser = user.uid;
-        console.log("User ID: " + user.uid + ", Provider: " + user.provider);
-    } else {
-      // user is logged out
-      console.log("user logged out");
-    }
-  });
-
-
-  $(".facebook-log-in").on('click', function() {
-    authClient.login('facebook', {
-      preferRedirect: true,
-      rememberMe: true,
-      scope: 'email,user_likes,user_friends'
-    });
-  });
-
   $(".facebook-log-out").on('click', function() {
     authClient.logout();
   });
@@ -296,8 +238,8 @@ $(".show-chat").on('click', function() {
 });
 
 
+// geolocation
 
-<<<<<<< HEAD
 if (geoPosition.init()) {
   geoPosition.getCurrentPosition(geoSuccess, geoError);
 }
@@ -491,5 +433,3 @@ geoQuery.on("key_exited", function(key, location, distance) {
 // Dealing with keys which move around within a query
 
 }
-=======
->>>>>>> parent of be39f84... added geolocation and chat functionality
