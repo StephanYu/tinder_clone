@@ -304,4 +304,53 @@ $(".show-chat").on('click', function() {
 });
 
 
+// geolocation
 
+if (geoPosition.init()) {
+  geoPosition.getCurrentPosition(geoSuccess, geoError);
+}
+
+function geoSuccess(p) {
+  console.log(p);
+  alert("Found you at latitude " + p.coords.latitude +
+        ", longitude " + p.coords.longitude + 
+        ", accuracy " + p.coords.accuracy );
+
+  // connect to Firebase
+  // store p.coords
+
+  var refLocation = new Firebase("https://tinder.firebaseio.com/geoLocation/facebook:10152545844168859/");
+
+  refLocation.set({
+    latitude: p.coords.latitude,
+    longitude: p.coords.longitude,
+    accuracy: p.coords.accuracy,
+    timestamp: p.timestamp
+  });
+  // .then(function() {
+  //   console.log("Provided key has been added to GeoFire");
+  // }, function(error) {
+  //   console.log("Error: " + error);
+  // });
+
+
+}
+function geoError() {
+  alert("Could not find you!");
+}
+
+// clicking on location-lookup-permission link will lookup your location
+function lookup_location() {
+  geoPosition.getCurrentPosition(show_map, show_map_error);
+}
+
+function show_map(position) {
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+  var accuracy = position.coords.accuracy;
+  // let's show a map or do something interesting!
+}
+
+function show_map_error() {
+  $("#live-geolocation").html('Unable to determine your location.');
+}

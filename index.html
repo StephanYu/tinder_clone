@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<a href="#" onclick="lookup_location();return false">Click to look up your location</a><br>
+
   <button class="facebook-log-in">Log in via Facebook</button>
   <button class="facebook-log-out">Log Out</button>
   <button class="test-users">Populate Test Data</button>
@@ -45,18 +47,15 @@
 
   <div class="matches">
   <h2>Matches</h2>
-    <img src="http://www.phootoscelebrities.com/wp-content/uploads/2014/07/Miley-Cyrus-cute-photos.jpg"/>
+    <img src="http://www.phootoscelebrities.com/wp-content/uploads/2014/07/Miley-Cyrus-cute-photos.jpg" class="show-chat"/>
     <img src="http://www.phootoscelebrities.com/wp-content/uploads/2014/07/Miley-Cyrus-cute-photos.jpg"/>
   </div>
 
   <div class="chat-box">
   <h2>Chat Box</h2>
     <div class="chat-history">
-    <p>Chat history with Amber</p>
-    <p>Stephan: Hi Amber</p>
-    <p>Megan: Hi Stephan</p>
     </div>
-    <button class="show-chat">Show Chat</button><br>
+    <!-- <button class="show-chat">Show Chat</button><br> -->
     Type your message here:
     <input type="text" name="chat-input" id="chat-message"/>
 
@@ -72,6 +71,11 @@
   <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script> 
   <script src="https://cdn.firebase.com/js/simple-login/1.6.4/firebase-simple-login.js"></script>
   <script src='javascript/firechat-default.min.js'></script>
+  <script src="https://cdn.jsdelivr.net/rsvp/3.0.6/rsvp.amd.min.js"></script>
+  <script src="https://cdn.firebase.com/libs/geofire/2.0.0/geofire.min.js"></script>
+  <script src="javascript/geoPosition.js"></script>
+  <!-- <script src="javascript/modernizer.js"></script> -->
   <script src="javascript/main.js"></script>
+
 </body>
 </html>
