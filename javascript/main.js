@@ -298,6 +298,7 @@ $(".show-chat").on('click', function() {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 if (geoPosition.init()) {
   geoPosition.getCurrentPosition(geoSuccess, geoError);
 }
@@ -491,5 +492,7 @@ geoQuery.on("key_exited", function(key, location, distance) {
 // Dealing with keys which move around within a query
 
 }
+=======
+>>>>>>> parent of be39f84... added geolocation and chat functionality
 =======
 >>>>>>> parent of be39f84... added geolocation and chat functionality
