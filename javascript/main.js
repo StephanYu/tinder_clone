@@ -248,7 +248,64 @@ $(".show-meets-criteria").on('click', function() {
   });
 
 
-  // $("#show-matches")
+  $("#show-matches").on('click', function() {
+
+    var myRef = new Firebase("https://tinder.firebaseio.com/users/facebook:10152545844168859/likes");
+
+    myRef.on('value', function(snap) {
+      myRef = snap.val();
+      // myRef is an object of { uid: true, uid2: true }
+    });
+
+    $.each(myRef, function(key, value) {
+      var doesOtherPersonLikeMe = "https://tinder.firebaseio.com/users/" + key + "/likes/" + "facebook:10152545844168859";
+
+      if ( doesOtherPersonLikeMe ) {
+        console.log(key + " likes me");
+        // UI to show the user
+
+      }
+
+    });    
+
+
+  });
+    
+    // Create a new Firebase reference, and a new instance of the Login client
+      var chatRef = new Firebase('https://tinder.firebaseio.com/chat');
+      var auth = new FirebaseSimpleLogin(chatRef, function(err, user) {
+        // Once authenticated, instantiate Firechat with our user id and user name
+        if (user) {
+          var chat = new FirechatUI(chatRef, document.getElementById('firechat-wrapper'));
+          chat.setUser(user.uid, user.displayName);
+        }
+      });
+
+    // Add new users to Firechat
+    // $("#add-chat-user").on('click', function() {
+    //   var chatRef = new Firebase('https://tinder.firebaseio.com/chat/users');
+    //   chatRef.push({
+    //     id: "-JXo0RWK9pGzARGeMec_",
+    //     name: "Amber"
+    //   });
+
+    //   var setId = new Firebase('https://tinder.firebaseio.com/chat/users/-JXo0RWK9pGzARGeMec_/id');
+    //   chatRef.set( "-JXo0RWK9pGzARGeMec_" );
+    //   var setName = new Firebase('https://tinder.firebaseio.com/chat/users/-JXo0RWK9pGzARGeMec_/name');
+    //   chatRef.set( "Amber" );
+
+    //   var setIdOnline = new Firebase('https://tinder.firebaseio.com/chat/users-names-online/amber/abc/id');
+    //   chatRef.set( "-JXo0RWK9pGzARGeMec_" );
+    //   var setNameOnline = new Firebase('https://tinder.firebaseio.com/chat/users-names-online/amber/abc/name');
+    //   chatRef.set( "Amber" );
+
+    // });
+
+  
+
+
+
+
 
 //searching for matches
 // users.forEach();
