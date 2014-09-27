@@ -4,6 +4,7 @@
   <title>Tinder</title>
   <!-- <link rel="stylesheet" href="bootstrap.css"> -->
   <link rel='stylesheet' href='css/firechat-default.min.css' />
+  <link rel='stylesheet' href='css/styles.css' />
   
 </head>
 <body>
@@ -41,11 +42,27 @@
   </form>
   </div>
 
-  <button id="add-chat-user">Add Chat User</button>
-  <div id='firechat-wrapper'>
-      <!-- <a href='#' onclick='auth.login("twitter");'>Login</a> -->
+
+  <div class="matches">
+  <h2>Matches</h2>
+    <img src="http://www.phootoscelebrities.com/wp-content/uploads/2014/07/Miley-Cyrus-cute-photos.jpg"/>
+    <img src="http://www.phootoscelebrities.com/wp-content/uploads/2014/07/Miley-Cyrus-cute-photos.jpg"/>
   </div>
-  
+
+  <div class="chat-box">
+  <h2>Chat Box</h2>
+    <div class="chat-history">
+    <p>Chat history with Amber</p>
+    <p>Stephan: Hi Amber</p>
+    <p>Megan: Hi Stephan</p>
+    </div>
+    <button class="show-chat">Show Chat</button><br>
+    Type your message here:
+    <input type="text" name="chat-input" id="chat-message"/>
+
+    <input type="submit" id="chat-submit">
+  </div>
+
 
   <div class="user">
   </div>

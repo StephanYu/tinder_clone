@@ -1,0 +1,13 @@
+.chat-box {
+  border: 5px solid black;
+}
+
+.chat-history {
+  border: 2px solid black;
+  margin: 20px;
+}
+
+img {
+  height: 50px;
+  width: 50px;
+}

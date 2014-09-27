@@ -271,65 +271,37 @@ $(".show-meets-criteria").on('click', function() {
 
   });
     
-    // Create a new Firebase reference, and a new instance of the Login client
-      var chatRef = new Firebase('https://tinder.firebaseio.com/chat');
-      var auth = new FirebaseSimpleLogin(chatRef, function(err, user) {
-        // Once authenticated, instantiate Firechat with our user id and user name
-        if (user) {
-          var chat = new FirechatUI(chatRef, document.getElementById('firechat-wrapper'));
-          chat.setUser(user.uid, user.displayName);
-        }
-      });
+// Stephan chat with Amber
 
-    // Add new users to Firechat
-    // $("#add-chat-user").on('click', function() {
-    //   var chatRef = new Firebase('https://tinder.firebaseio.com/chat/users');
-    //   chatRef.push({
-    //     id: "-JXo0RWK9pGzARGeMec_",
-    //     name: "Amber"
-    //   });
+$("#chat-submit").on('click', function() {
 
-    //   var setId = new Firebase('https://tinder.firebaseio.com/chat/users/-JXo0RWK9pGzARGeMec_/id');
-    //   chatRef.set( "-JXo0RWK9pGzARGeMec_" );
-    //   var setName = new Firebase('https://tinder.firebaseio.com/chat/users/-JXo0RWK9pGzARGeMec_/name');
-    //   chatRef.set( "Amber" );
+  var chatRef = new Firebase("https://tinder.firebaseio.com/chats/facebook%3A10152545844168859/-JXo0RWK9pGzARGeMec_"); 
 
-    //   var setIdOnline = new Firebase('https://tinder.firebaseio.com/chat/users-names-online/amber/abc/id');
-    //   chatRef.set( "-JXo0RWK9pGzARGeMec_" );
-    //   var setNameOnline = new Firebase('https://tinder.firebaseio.com/chat/users-names-online/amber/abc/name');
-    //   chatRef.set( "Amber" );
+  var chatMessage = $("#chat-message").val();
 
-    // });
+  chatRef.push( { 
+    user: currentUser.uid,
+    message: chatMessage
+  });
 
-  
+});
 
 
+var chatRef = new Firebase("https://tinder.firebaseio.com/chats/facebook:10152545844168859/-JXo0RWK9pGzARGeMec_"); 
+chatRef.on('value', function(snapshot) {
+  chatRef = snapshot.val();
+});
 
 
+$(".show-chat").on('click', function() {
+  console.log("button clicked");
+  $.each(chatRef, function(key, value) {
+    console.log(key);
+    var $msg = "<p>" + value.user + ": " + value.message + "</p>";
+    $(".chat-history").append( $msg );
+  });
 
-//searching for matches
-// users.forEach();
-// var myMatch = 
-// new Firebase("https://tinder.firebaseio.com/users")
-//   .startAt("female")
-//   .endAt("female")
-//   .once("value", function(snap){
-//     console.log(snap.val());
-//   });
-  
-//look through each child node for gender = female && min_age = 20 && max_age = 30 && math.abs(user_location - match.location) = 50
-
-  //add security rules
-
-
-// // photo link
-// user.thirdPartyUserData.picture.data.url
-
-
-// // at least 13, 18, 21
-// user.thirdPartyUserData.age_range.min
-// // under 17, 20
-// user.thirdPartyUserData.age_range.max
+});
 
 
 
