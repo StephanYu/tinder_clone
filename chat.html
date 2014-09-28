@@ -29,7 +29,7 @@
           </ul>
 
       </div>
-      <div class="nav-matches">
+      <!-- <div class="nav-matches">
         <ul>
             <li><img class="img-circle nav-img" src="img/miley.jpg"> Megan</li>
             <li><img class="img-circle nav-img" src="img/miley.jpg"> Amber</li>
@@ -37,7 +37,26 @@
             <li><img class="img-circle nav-img" src="img/miley.jpg"> Nina</li>
             <li><img class="img-circle nav-img" src="img/miley.jpg"> Jennifer</li>
         </ul>
-      </div>
+      </div> -->
+
+      <!-- Option 3 using Listgroups -->
+      <ul class="list-group list-special">
+
+        <a href="#">
+          <li class="list-group-item chat-users active-chat">
+            <img class="img-circle nav-img" src="img/miley.jpg"> 
+            <span class="chat-user-name">Amber</span>
+            <i class="fa fa-circle"></i>
+          </li>
+        </a>
+
+        <a href="#">
+          <li class="list-group-item chat-users inactive-chat">
+            <img class="img-circle nav-img" src="img/miley.jpg"> 
+            <span class="chat-user-name">Amber</span>
+            <i class="fa fa-circle"></i>
+          </li>
+        </a>
 
       <div class="settings">
         <a href="#"><span class="glyphicon glyphicon-cog"></span></a>
@@ -47,13 +66,70 @@
 
 
     <div class="main-div col-md-10 col-lg-10">
-      <div class="chat-history"> 
-      <span class="msg-user">Stephan: Hi!</span><br>
-      Megan: Hello<br>
-      </div>
-      <input class="chat-message" type="text" placeholder="Type your message...">
-      <span class="fa fa-comments"></span>
-    </div> <!-- col size -->
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">To: Amber </a>
+          </div>
+        </div>
+      </nav>
+      <!-- chat window output -->
+      <div class="row chat-row">
+        <div class="chat-history"> 
+
+          <!-- Option1 Media List -->
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img class="media-object" src="img/miley.jpg" alt="Miley">
+            </a>
+            <div class="media-body-left">
+              <h4 class="media-heading">Hey there, bad boy!</h4>
+            </div>
+          </div>
+        </div>
+        <div class="chat-history"> 
+          <div class="media">
+            <a class="pull-right" href="#">
+              <img class="media-object" src="http://assets.nydailynews.com/polopoly_fs/1.1761308.1397852084!/img/httpImage/image.jpg_gen/derivatives/article_970/kristen19f-6-web.jpg" alt="Brad">
+            </a>
+            <div class="media-body-right">
+              <h4 class="media-heading">What up, sweetie pie!</h4>
+            </div>
+          </div>
+        </div><!-- end of Option1 Media List -->
+      
+
+      </div> <!-- end chat window output -->
+     
+
+      <!-- chat window input field -->
+      <div class="row chat-row chat-row-bottom">
+        <div class="chat-message-container">
+          <!-- Option 2 Button add-ons -->
+          <div class="col-lg-6 col-centered">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Type your message...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><span class="fa fa-comments"></span></button>
+              </span>
+              </div><!-- /input-group -->
+          </div><!-- /.col-lg-6 -->
+        </div>
+
+
+        <!-- <input class="chat-message" type="text" placeholder="Type your message...">
+          <span class="fa fa-comments"></span> -->
+
+      </div><!-- end chat window input field -->
+
+    </div> <!-- main col-10  -->
 
   </div> <!-- row -->
 </div> <!-- container -->
