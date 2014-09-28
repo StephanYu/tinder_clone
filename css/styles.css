@@ -1,13 +1,155 @@
-.chat-box {
-  border: 5px solid black;
+body {
+  background: #f5f5f5;
+  font-family: 'Roboto';
 }
 
+.sidebar,
+a {
+  background: #4d566e;
+  color: #99A0B3;
+  padding: 0;
+  height: 100%;  
+}
+
+.logo {
+  padding: 15px;
+  padding-top: 0;
+}
+
+.sidebar-nav,
+.sidebar-nav ul {
+  font-size: 1.2em;
+  list-style-type: none;
+  padding: 0 7px 0 7px; 
+}
+
+.badge {
+  background: #ffb300;
+  font-size: .7em;
+  margin: 5px;
+}
+
+a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ddd;
+}
+
+#user-profile-pic {
+  height: 120px;
+  width: 120px;
+  cursor: pointer;
+}
+
+.nav-matches ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px;
+  font-size: 1.2em;
+}
+
+.nav-img {
+  height: 40px;
+  width: 40px;
+  margin: 7px 10px;
+}
+
+.img-div {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.settings {
+  position: absolute;
+  bottom: 0;
+}
+
+.main-div {
+  text-align: center;
+}
+
+.bio-info {
+  position: relative;
+  margin: 0 auto;
+  width: 50%;
+}
+
+#user-first-name {
+  font-size: 1.4em;
+}
+
+#browse {
+  font-size: 4em;
+}
+
+#browse-name {
+  font-weight: bold;
+}
+
+#browse-bio {
+  font-size: 1.7em;
+  padding: 10px;
+}
+
+#browse-distance {
+  font-size: .4em;
+}
+
+.row div {
+  border: 1px solid black;
+}
+
+.glyphicon-cog {
+  font-size: 2em;
+  margin: 10px;
+}
+
+/*.fa-heart,*/
+/*.fa-comments,*/
+.glyphicon-heart,
+.glyphicon-remove-circle,
+.glyphicon-ok-circle {
+  font-size: 6em;
+}
+
+.glyphicon-remove-circle {
+  color: #e84e40;
+  float: center;
+  margin: 10px 50px;
+}
+
+.glyphicon-remove-circle:hover {
+  color: #d01716;
+}
+
+.glyphicon-ok-circle {
+  color: #259b24;
+  float: center;
+}
+
+.glyphicon-ok-circle:hover {
+  color: #0a7e07;
+}
+
+.fa-comments {
+  color: #03a9f4; 
+  font-size: 3em;
+}
 .chat-history {
-  border: 2px solid black;
-  margin: 20px;
+  font-size: .7em;
+  text-align: left;
 }
 
-img {
-  height: 50px;
-  width: 50px;
+.chat-message {
+  height: 35px;
+  width: 600px;
+  font-size: 1em;
+}
+
+.chat-user {
+
+}
+
+.msg-user {
+  text-align: right;
 }
