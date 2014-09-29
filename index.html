@@ -1,76 +1,139 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Tinder</title>
-  <!-- <link rel="stylesheet" href="bootstrap.css"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Go Oogle</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel='stylesheet' href='css/firechat-default.min.css' />
-  <link rel='stylesheet' href='css/styles.css' />
-
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://fotorama.s3.amazonaws.com/4.6.2/fotorama.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' href='css/styles.css'/>
 </head>
 <body>
 
-<a href="#" onclick="lookup_location();return false">Click to look up your location</a><br>
-
-  <button class="facebook-log-in">Log in via Facebook</button>
-  <button class="facebook-log-out">Log Out</button>
-  <button class="test-users">Populate Test Data</button>
-  <br>
-  <button class="add-meets-criteria">Add Meets Criteria</button>
-  <button class="show-meets-criteria">Show Meets Criteria</button>
   
-  <button id="dislike">Dislike</button>
-  <button id="like">Like</button>
+  <div class="jumbotron" id="go-oogle-login">
+    <div class="container-fluid login">
 
-  <button id="show-matches">Show Matches</button>
+      <h1>Go Oogle</h1>
+      <br>
 
-  <button class="calculate-distance">Distance</button>
+      <p>I'm Looking For:</p>
+      <div class="btn-group btn-group-lg">
+        <button type="button" class="btn btn-default gender-preference" value="men">Men</button>
+        <button type="button" class="btn btn-default gender-preference" value="women">Women</button>
+        <button type="button" class="btn btn-default gender-preference" value="both">Both</button>
+      </div>
+      
+      <br><br>
+      Between ages of:<br>
+      
+      
+      
+      <form class="form-inline" role="form">
 
-  <div class="meets-criteria">
-    <img src="" class="meets-criteria-img">
-  </div>
+        <div class="form-group age-pref">
+          <input type="number" class="form-control" id="min-age-pref" placeholder="18" min="18">
+          <input type="number" class="form-control" id="max-age-pref" placeholder="35" max="100">
+        </div>
+        
+      </form>
 
+        <br>
 
-  <div>
-  <form action="">
-    <label for="gender">Looking for:</label><br>
-    <input type="radio" name="gender" value="female">Female<br>
-    <input type="radio" name="gender" value="male">Male<br>
-    
-    <label for="gender">Minimum Age I'm Looking For:</label><br>
-    <input type="number" name="min_age" id="min_age" min="18"><br>
-
-    <label for="gender">Maximum Age I'm Looking For:</label><br>
-    <input type="number" name="min_age" id="max_age" max="100"><br>
-
-    <input type="submit" id="submit-btn">
-  </form>
-  </div>
-
-
-  <div class="matches">
-  <h2>Matches</h2>
-    <img src="http://www.phootoscelebrities.com/wp-content/uploads/2014/07/Miley-Cyrus-cute-photos.jpg" class="show-chat"/>
-    <img src="http://www.phootoscelebrities.com/wp-content/uploads/2014/07/Miley-Cyrus-cute-photos.jpg"/>
-  </div>
-
-  <div class="chat-box">
-  <h2>Chat Box</h2>
-    <div class="chat-history">
-    </div>
-    <!-- <button class="show-chat">Show Chat</button><br> -->
-    Type your message here:
-    <input type="text" name="chat-input" id="chat-message"/>
-
-    <input type="submit" id="chat-submit">
-  </div>
+        <a href="#"><img id="fb-login" src="img/fb-login.png"/></a>
+        <br>
+        <button type="submit" class="btn btn-default view-demo" id="demo-btn">View Demo</button>
 
 
-  <div class="user">
-  </div>
+    </div> <!-- container-fluid -->
+  </div> <!-- jumbotron -->
 
+
+
+<div id="main-go-oogle" class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="sidebar col-xs-2 col-sm-2 col-md-2 col-lg-2">
+      <div id="sidebar-profile-wrap">
+
+         <!-- Brand and toggle get grouped for better mobile display --> 
+       <!--    <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar">1</span>
+              <span class="icon-bar">2</span>
+              <span class="icon-bar">3</span>
+            </button>
+            <a class="navbar-brand" href="#">To: Amber </a>
+          </div>                   
+           -->
+
+
+          <h1 class="logo">Go Oogle</h1>
+          
+          <div class="img-div">
+            <img id="user-profile-pic" class="img-circle" src="img/brad1.jpg">
+            <div id="user-first-name">Stephan</div>
+          </div>  
+
+        <ul class="list-group list-special">
+          <a href="#">
+            <li class="list-group-item nav-active">
+              Go Oogle
+            </li>
+          </a>
+
+          <a href="matches.html">
+            <li class="list-group-item">
+              Matches
+              <span id="match-count" class="badge pull-right">2</span>
+            </li>
+          </a>
+         </ul> 
+
+      </div>  <!-- sidebar profile-wrap -->
+
+      <div class="settings">
+        <a href="#"><span class="glyphicon glyphicon-cog"></span></a>
+      </div>
+    </div> <!-- sidebar col-->
+
+
+    <div class="main-div col-xs-10 col-sm-10 col-md-10 col-lg-10">
+      <div id="browse">
+        <span id="browse-name">Megan,</span> 
+        <span id="browse-age">23</span><br>
+        <span id="browse-distance">DISTANCE: 
+          <span id="distance-mi">5</span> mi
+         (<span id="distance-km">8</span> km)
+        </span>
+      </div>
+      
+
+
+      <div class="fotorama bio-info" data-loop="true" data-nav="thumbs" data-fit="cover" data-keyboard="true" data-thumbwidth="150" data-thumbheight="120">
+        <img src="http://conversationsabouther.net/wp-content/uploads/2014/03/Angelina-Jolie-2.jpg">
+        <img src="http://www.hdwallpapers.in/walls/angelina_jolie_in_salt-normal.jpg">
+        <img src="http://www.africa-ontherise.com/wp-content/uploads/2014/09/Angelina-Jolie.jpg">
+        <img src="http://i3.mirror.co.uk/incoming/article3201481.ece/alternates/s2197/Angelina-Jolie-arrives-on-the-red-carpet-for-the-86th-Academy-Awards.jpg">
+
+      </div>
+
+      <div id="browse-bio" class="bio-info">
+      <strong>BIO</strong><br>
+      I like going to concerts and playing peng pong.</div>
+      <span class="glyphicon glyphicon-remove-circle"></span>
+      <span class="glyphicon glyphicon-ok-circle"></span>
+      
+    </div> <!-- main-div col -->
+
+  </div> <!-- row -->
+</div> <!-- container -->
 
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="http://fotorama.s3.amazonaws.com/4.6.2/fotorama.js"></script>
+
   <script src="javascript/bootstrap.min.js"></script>
   
   <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script> 
@@ -84,7 +147,7 @@
   
   <!-- <script src="https://cdn.jsdelivr.net/rsvp/3.0.6/rsvp.amd.min.js"></script> -->
   <!-- <script src="javascript/modernizer.js"></script> -->
-  <script src="javascript/main.js"></script>
+  <script src="javascript/main2.js"></script>
 
 </body>
 </html>

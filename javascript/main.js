@@ -2,9 +2,9 @@
 
   var isNewUser = true;
   var currentUser = null;
-  var myRef = new Firebase("https://tinder.firebaseio.com");
+  var refRoot = new Firebase("https://tinder.firebaseio.com");
 
-  var authClient = new FirebaseSimpleLogin(myRef, function(error, user) { 
+  var authClient = new FirebaseSimpleLogin(refRoot, function(error, user) { 
     if (error) {
       console.log(error);
     } else if (user) {
@@ -29,7 +29,7 @@
       // check users firebase if user exists
       if ( isNewUser ) {
         // save new user's profile into Firebase under their user_id
-        myRef.set({
+        refRoot.set({
           provider: user.provider,
           providerId: user.id,
           displayName: user.displayName,
@@ -39,7 +39,7 @@
           picUrl: user.thirdPartyUserData.picture.data.url
         });
       }
-        currentUser = user.uid;
+        // currentUser = user.uid;
         console.log("User ID: " + user.uid + ", Provider: " + user.provider);
     } else {
       // user is logged out
@@ -211,8 +211,8 @@ $(".show-meets-criteria").on('click', function() {
   //   $(".user_img").attr('src', snap.val());
   // });
 
-  var myRef = new Firebase("https://tinder.firebaseio.com/users/" + currentUser);
-  var myDataRef = myRef.child("preferences");
+  var refRoot = new Firebase("https://tinder.firebaseio.com/users/" + currentUser);
+  var myDataRef = refRoot.child("preferences");
 
   
   $('#submit-btn').on('click', function() {
@@ -235,14 +235,14 @@ $(".show-meets-criteria").on('click', function() {
 
   $("#show-matches").on('click', function() {
 
-    var myRef = new Firebase("https://tinder.firebaseio.com/users/" + currentUser + "/likes/");
+    var refRoot = new Firebase("https://tinder.firebaseio.com/users/" + currentUser + "/likes/");
 
-    myRef.on('value', function(snap) {
-      myRef = snap.val();
-      // myRef is an object of { uid: true, uid2: true }
+    refRoot.on('value', function(snap) {
+      refRoot = snap.val();
+      // refRoot is an object of { uid: true, uid2: true }
     });
 
-    $.each(myRef, function(key, value) {
+    $.each(refRoot, function(key, value) {
       var doesOtherPersonLikeMe = "https://tinder.firebaseio.com/users/" + key + "/likes/" + currentUser;
 
       if ( doesOtherPersonLikeMe ) {
