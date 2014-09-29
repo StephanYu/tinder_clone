@@ -3,6 +3,10 @@ body {
   font-family: 'Roboto';
 }
 
+.row {
+  background: #606982;
+}
+
 .sidebar,
 .sidebar a {
   background: #4d566e;
@@ -55,8 +59,13 @@ a:hover {
   /*margin: 7px 10px;*/
 }
 
+.profile-bar {
+  padding-left: 0px;
+  padding-right: 0px;
+}
 
-.list-special .list-group-item:first-child {
+.list-special .list-group-item:first-child,
+ {
   border-top-right-radius: 0px !important;
   border-top-left-radius: 0px !important;
 }
@@ -65,6 +74,7 @@ a:hover {
   border-bottom-right-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
 }
+
 
 .chat-user-name {
   margin: 0 10px;
@@ -75,19 +85,34 @@ a:hover {
   margin: 12px 0;
 }
 
+.chat-users i {
+  color: #99A0B3;
+}
+
 .chat-users.active-chat i {
   color: #42bd41;
-}
-.chat-users.inactive-chat i {
-  color: #e51c23;
 }
 
 .list-group li {
   background: #586179;
   border: none;
+  font-size: 1.2em;
+  color: #ddd;
 }
+
 .list-group li:hover {
   background: #606982;
+}
+
+li.nav-active,
+li.active-chat {
+  background: #606982;
+  color: #ddd;
+  font-weight: bold;
+}
+
+li.active-chat {
+  border-bottom: 1px solid #7b8296;
 }
 
 .img-div {
@@ -106,6 +131,13 @@ a:hover {
   height: 100%;
   padding-right: 0px;
   padding-left: 0px;
+  background: #fff;
+}
+
+.chat-navbar {
+  border-radius: 0%;
+  background: #eceff1;
+  height: 61px;
 }
 
 .bio-info {
@@ -120,6 +152,7 @@ a:hover {
 
 #user-first-name {
   font-size: 1.4em;
+  margin: 10px 0 30px 0;
 }
 
 #browse {
@@ -214,6 +247,7 @@ a:hover {
   width: 100%;
   margin: 0px;
   padding: 15px;
+  background: #fff;
 }
 
 .media img {
