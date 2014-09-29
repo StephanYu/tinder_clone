@@ -19,7 +19,12 @@ body {
 
 #fb-login {
   width: 220px;
-  margin: 0 0 15px 3px;
+  margin: 20px 0 15px 3px;
+}
+
+.login-form {
+  margin-top: 10px;
+  /*margin-bottom: ;*/
 }
 
 .view-demo {
