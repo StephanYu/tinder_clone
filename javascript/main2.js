@@ -1,3 +1,6 @@
+
+$(document).ready(function() {
+
 var isNewUser = true;
 var currentUser = null;
 var currentUserId = null;
@@ -6,11 +9,10 @@ var refUsers = new Firebase("https://tinder.firebaseio.com/users/");
 var refLocation = new Firebase("https://tinder.firebaseio.com/geoLocation");
 var refChat = new Firebase("https://tinder.firebaseio.com/chat");
 
+//add test-users to the database for demo-purposes
+seedUsers();
 
-$(document).ready(function() {
-  seedUsers();
-});
-
+// Firebase Facebook log-in
 var authClient = new FirebaseSimpleLogin(refRoot, function(error, user) { 
   // log error if there is an error
   if (error) {
@@ -55,7 +57,6 @@ var authClient = new FirebaseSimpleLogin(refRoot, function(error, user) {
     // user is logged out
     console.log("user logged out");
   }
-      addPreferences();
 });
 
 $("#fb-login").on('click', function() {
@@ -64,6 +65,7 @@ $("#fb-login").on('click', function() {
     rememberMe: true,
     scope: 'email,user_likes,user_friends'
   });
+      addPreferences();
 
 });
 
@@ -80,20 +82,19 @@ $('.btn-group .btn').click(function() {
 
 function addPreferences() {
   var minAgePref = $('#min-age-pref').val();
-  console.log(minAgePref);
   var maxAgePref = $('#max-age-pref').val();
-  console.log(maxAgePref);
+  var radiusPref = $("#radius-pref").val();
 
   // var refPreferences = new Firebase(refUsers + currentUserId);
 
-  refUsers.child(currentUserId).child("preferences").update(
+  refUsers.child(currentUserId).child("preferences").set(
     { 
       gender: genderPref, 
       min_age: minAgePref, 
-      max_age: maxAgePref
+      max_age: maxAgePref,
+      radius: radiusPref
     }
-    );
-
+  );
 }
 
 function seedUsers() {
@@ -168,4 +169,4 @@ var usersArray = [];
 // }
 
 
-
+}); //end of document.ready();

@@ -29,7 +29,14 @@ body {
 
 .view-demo {
   padding: 12px 75px;
+  background: #f6bd62;
+  font-weight: bold;
+  
 }
+
+/*#demo-btn {
+  background: #f6bd62;
+}*/
 
 .sidebar,
 .sidebar a {
@@ -306,6 +313,13 @@ li.active-chat {
 .jumbotron,
 .input-group .form-control {
   text-align: center;
+}
+
+.jumbotron {
+  background: #507088;
+}
+.jumbotron h1 {
+  color: #f6bd62;
 }
 
 .form-control {
