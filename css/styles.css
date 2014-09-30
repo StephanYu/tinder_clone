@@ -31,12 +31,10 @@ body {
   padding: 12px 75px;
   background: #f6bd62;
   font-weight: bold;
-  
+  width: 220px;
+
 }
 
-/*#demo-btn {
-  background: #f6bd62;
-}*/
 
 .sidebar,
 .sidebar a {
@@ -315,12 +313,12 @@ li.active-chat {
   text-align: center;
 }
 
-.jumbotron {
+/*.jumbotron {
   background: #507088;
-}
-.jumbotron h1 {
+}*/
+/*.jumbotron h1 {
   color: #f6bd62;
-}
+}*/
 
 .form-control {
   height: 45px;
