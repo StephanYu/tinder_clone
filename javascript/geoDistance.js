@@ -1,7 +1,10 @@
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> b3da28c
 var location1 = [];
 // [latitude, longitude];
 var location2 = [];

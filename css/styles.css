@@ -1,13 +1,325 @@
-.chat-box {
-  border: 5px solid black;
+body {
+  background: #f5f5f5;
+  font-family: 'Roboto';
 }
 
+.row-chat {
+  background: #606982;
+}
+
+.form-control {
+  text-align: center;
+  height: 45px;
+  width: 80px;
+}
+
+.how-it-works {
+  text-align: center;
+}
+
+#fb-login {
+  width: 220px;
+  margin: 20px 0 15px 3px;
+}
+
+.login-form {
+  margin-top: 10px;
+  /*margin-bottom: ;*/
+}
+
+.view-demo {
+  padding: 12px 75px;
+  background: #f6bd62;
+  font-weight: bold;
+  width: 220px;
+
+}
+
+
+.sidebar,
+.sidebar a {
+  background: #4d566e;
+  color: #99A0B3;
+  padding: 0;
+  height: 100%;
+
+}
+
+.logo {
+  padding: 15px;
+  padding-top: 0;
+}
+
+.sidebar-nav,
+.sidebar-nav ul {
+  font-size: 1.2em;
+  list-style-type: none;
+  padding: 0 7px 0 7px; 
+}
+
+.badge {
+  background: #ffb300;
+  font-size: .7em;
+  margin: 5px 0px 5px;
+}
+
+a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ddd;
+}
+
+#user-profile-pic {
+  height: 120px;
+  width: 120px;
+  cursor: pointer;
+}
+
+.nav-matches ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px;
+  font-size: 1.2em;
+}
+
+.nav-img {
+  height: 40px;
+  width: 40px;
+  /*margin: 7px 10px;*/
+}
+
+.profile-bar {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.list-special .list-group-item:first-child,
+ {
+  border-top-right-radius: 0px !important;
+  border-top-left-radius: 0px !important;
+}
+
+.list-special .list-group-item:last-child {
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+
+.chat-user-name {
+  margin: 0 10px;
+}
+
+.chat-users i {
+  float: right;
+  margin: 12px 0;
+}
+
+.chat-users i {
+  color: #99A0B3;
+}
+
+.chat-users.active-chat i {
+  color: #42bd41;
+}
+
+.list-group li {
+  background: #586179;
+  border: none;
+  font-size: 1.2em;
+  color: #ddd;
+}
+
+.list-group li:hover {
+  background: #606982;
+}
+
+li.nav-active,
+li.active-chat {
+  background: #606982;
+  color: #ddd;
+  font-weight: bold;
+}
+
+li.active-chat {
+  border-bottom: 1px solid #7b8296;
+}
+
+.img-div {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.settings {
+  position: absolute;
+  bottom: 0;
+
+}
+
+.main-div {
+  text-align: center;
+  height: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  background: #fff;
+}
+
+.chat-navbar {
+  border-radius: 0%;
+  background: #eceff1;
+  height: 61px;
+}
+
+.bio-info {
+  position: relative;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.fotorama img {
+  position: absolute;
+}
+
+#user-first-name {
+  font-size: 1.4em;
+  margin: 10px 0 30px 0;
+}
+
+#browse {
+  font-size: 4em;
+}
+
+#browse-name {
+  font-weight: bold;
+}
+
+#browse-bio {
+  font-size: 1.1em;
+  padding: 10px;
+  text-align: left;
+}
+
+#browse-distance {
+  font-size: .4em;
+}
+
+.glyphicon-cog {
+  font-size: 2em;
+  margin: 10px 10px 10px 16px;
+}
+
+/*.fa-heart,*/
+/*.fa-comments,*/
+.glyphicon-heart,
+.glyphicon-remove-circle,
+.glyphicon-ok-circle {
+  font-size: 6em;
+}
+
+.glyphicon-remove-circle {
+  color: #e84e40;
+  float: center;
+  margin: 10px 50px;
+}
+
+.glyphicon-remove-circle:hover {
+  color: #d01716;
+}
+
+.glyphicon-ok-circle {
+  color: #259b24;
+  float: center;
+}
+
+.glyphicon-ok-circle:hover {
+  color: #0a7e07;
+}
+
+.fa-comments {
+  color: #03a9f4; 
+  font-size: 3em;
+}
 .chat-history {
-  border: 2px solid black;
-  margin: 20px;
+  font-size: .7em;
+  text-align: center;
 }
 
-img {
-  height: 50px;
-  width: 50px;
+.chat-message-container {
+  position: relative;
+  bottom: 0px;
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+
+.chat-message {
+  height: 3em;
+  width: 50%;
+  font-size: 1em;
+  text-align: center;
+}
+
+.form-control {
+  height: 56px;
+}
+
+.chat-row {
+  width: 100%;
+  margin: 0px;
+  padding: 15px;
+  background: #fff;
+}
+
+.media img {
+  width: 80px;
+  height: 80px;
+}
+
+.media-body-left {
+  text-align: left;
+}
+
+.media-body-right {
+  text-align: right;
+}
+
+.chat-row-bottom {
+  position: fixed;
+  bottom: 0%;
+  background: #7482a5;
+  
+}
+
+.chat-user {
+
+}
+
+.msg-user {
+  text-align: right;
+}
+
+.jumbotron,
+.input-group .form-control {
+  text-align: center;
+}
+
+/*.jumbotron {
+  background: #507088;
+}*/
+/*.jumbotron h1 {
+  color: #f6bd62;
+}*/
+
+.form-control {
+  height: 45px;
 }

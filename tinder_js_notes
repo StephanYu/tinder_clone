@@ -1,0 +1,140 @@
+//login
+
+document.on(ready, function() {
+  function seedUsers();
+})
+
+
+fb-btn.on('click'. function() {
+  function doesUserExist()
+});
+
+function doesUserExist() {
+  // if user does not exist..
+    function addUser() 
+}
+
+function addUser() {
+  adds user to Firebase
+  function addPreferences()
+    // should happen AFTER user has been added
+}
+
+function addPreferences() {
+  connect to Firebase & add preferences
+
+  function meetsCriteria()
+    // should happen AFTER preferences have been added
+}
+
+function meetsCriteria() {
+  
+}
+
+demo-btn.on('click', function() {
+  createDemoUser()
+})
+
+
+
+var demoUser = snapshot of firebase.com/users/demouid
+
+function createDemoUser() {
+  demoConnect = new Firebase( /users/demouid/preferences )
+  
+  // preferences.set(
+  {
+  gender: $("#gender_pref").val()
+  etc
+  })
+}
+
+
+///////////
+
+on('click') of fb-btn or demo-btn
+move to page index.html (document)
+
+var meetsCriteriaArray = []
+
+$document.ready(function() {
+
+  function createMeetsCriteriaArray()   
+}
+
+
+function createMeetsCriteriaArray()  {
+  // connect to Firebase /users/currentUserId/meets_criteria
+  meetsCriteriaSnapshot = snapshot.val();
+
+  // iterate through JSON Object and push each user_object into meetsCriteriaArray
+  $.each(meetsCriteriaSnapshot, function (uid, userObject) {
+    meetsCriteriaArray.push(userObject)
+  })
+
+  loadPhotos();
+
+  $(".dislike").on('click', function() {
+
+    fbconnection = new Firebase(/users/currentUserId/dislikes)
+
+    fbconnection.set(meetsCriteriaArray[0])
+
+    meetsCriteriaArray.shift();
+
+    loadPhotos();
+
+  })
+
+  $(".like").on('click', function() {
+
+    fbconnection = new Firebase(/users/currentUserId/likes)
+
+    fbconnection.set(meetsCriteriaArray[0])
+
+    meetsCriteriaArray.shift();
+
+    checkIfMatch()
+
+    loadPhotos();
+  })
+
+}
+
+function loadPhotos() {
+  $("#photo1").attr("src", meetsCriteriaArray[0].photos[1])
+  $("#photo2").attr("src", meetsCriteriaArray[0].photos[2])
+  $("#photo3").attr("src", meetsCriteriaArray[0].photos[3])
+  $("#photo4").attr("src", meetsCriteriaArray[0].photos[4])
+}
+
+function checkifMatch() {
+
+    // check if the person you liked also likes you
+    // if currentUserId.likes[personyoulikeId] == personyoulikeId.likes[currentUserId] 
+
+  function notifyMatch() { 
+    // change match #s
+    alert box "You've a match! Amber likes you too!"
+  }
+
+
+  // allow user to chat with that person...
+
+}
+
+// matches
+$document.ready(function() {
+  connect to Firebase /users/currentUserId/likes
+  for each like, see if that user also likes you
+  if that user also likes you, their name display
+
+
+  $("#userMatch").on('click', function() {
+    connect to Firebase
+    take snapshot of conversation history
+    display conversation history
+
+  })
+
+})

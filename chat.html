@@ -1,0 +1,138 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tinder Clone</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://fotorama.s3.amazonaws.com/4.6.2/fotorama.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' href='css/styles.css'/>
+</head>
+<body>
+
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="sidebar col-md-2 col-lg-2">
+      <div id="sidebar-profile-wrap">
+          <a href="index2.html"><h1 class="logo">Tinder</h1></a>
+          <div class="img-div">
+            <img id="user-profile-pic" class="img-circle" src="http://assets.nydailynews.com/polopoly_fs/1.1761308.1397852084!/img/httpImage/image.jpg_gen/derivatives/article_970/kristen19f-6-web.jpg">
+            <div id="user-first-name">Stephan</div>
+          </div>  
+          <ul class="sidebar-nav">
+            <ul class="nav-links">
+            <a href="#"><li>Matches <span id="match-count" class="badge pull-right">2</span></li></a>
+          </ul>
+
+      </div>
+      <!-- <div class="nav-matches">
+        <ul>
+            <li><img class="img-circle nav-img" src="img/miley.jpg"> Megan</li>
+            <li><img class="img-circle nav-img" src="img/miley.jpg"> Amber</li>
+            <li><img class="img-circle nav-img" src="img/miley.jpg"> Stephanie</li>
+            <li><img class="img-circle nav-img" src="img/miley.jpg"> Nina</li>
+            <li><img class="img-circle nav-img" src="img/miley.jpg"> Jennifer</li>
+        </ul>
+      </div> -->
+
+      <!-- Option 3 using Listgroups -->
+      <ul class="list-group list-special">
+
+        <a href="#">
+          <li class="list-group-item chat-users active-chat">
+            <img class="img-circle nav-img" src="img/miley.jpg"> 
+            <span class="chat-user-name">Amber, 22</span>
+            <i class="fa fa-circle"></i> 
+          </li>
+        </a>
+
+        <a href="#">
+          <li class="list-group-item chat-users">
+            <img class="img-circle nav-img" src="img/miley.jpg"> 
+            <span class="chat-user-name">Megan, 23</span>
+            <i class="fa fa-circle"></i>
+          </li>
+        </a>
+
+      <div class="settings">
+        <a href="#"><span class="glyphicon glyphicon-cog"></span></a>
+      </div>
+
+    </div>
+  <!-- /#sidebar-wrapper -->
+
+
+    <div class="main-div col-md-10 col-lg-10">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar">1</span>
+              <span class="icon-bar">2</span>
+              <span class="icon-bar">3</span>
+            </button>
+            <a class="navbar-brand" href="#">To: Amber </a>
+          </div>
+        </div>
+      </nav>
+      <!-- chat window output -->
+      <div class="row chat-row">
+        <div class="chat-history"> 
+
+          <!-- Option1 Media List -->
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img class="media-object" src="img/miley.jpg" alt="Miley">
+            </a>
+            <div class="media-body-left">
+              <h4 class="media-heading">Hey there, bad boy!</h4>
+            </div>
+          </div>
+        
+          <div class="media">
+            <a class="pull-right" href="#">
+              <img class="media-object" src="http://assets.nydailynews.com/polopoly_fs/1.1761308.1397852084!/img/httpImage/image.jpg_gen/derivatives/article_970/kristen19f-6-web.jpg" alt="Brad">
+            </a>
+            <div class="media-body-right">
+              <h4 class="media-heading">What up, sweetie pie!</h4>
+            </div>
+          </div>
+
+        </div><!-- end chat-history -->
+      </div><!-- end row chat-row -->
+     
+
+      <!-- chat window input field -->
+      <div class="row chat-row chat-row-bottom">
+        <div class="chat-message-container">
+          <!-- Option 2 Button add-ons -->
+          <div class="col-lg-6 col-centered">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Type your message...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><span class="fa fa-comments"></span></button>
+              </span>
+              </div><!-- /input-group -->
+          </div><!-- /.col-lg-6 -->
+        </div>
+
+      </div><!-- end chat window input field -->
+
+    </div> <!-- main col-10  -->
+
+  </div> <!-- row -->
+</div> <!-- container -->
+
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="http://fotorama.s3.amazonaws.com/4.6.2/fotorama.js"></script>
+  <script src="javascript/bootstrap.min.js"></script>
+  <script src="javascript/main.js"></script>
+
+</body>
+</html>

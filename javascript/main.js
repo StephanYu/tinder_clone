@@ -2,9 +2,9 @@
 
   var isNewUser = true;
   var currentUser = null;
-  var myRef = new Firebase("https://tinder.firebaseio.com");
+  var refRoot = new Firebase("https://tinder.firebaseio.com");
 
-  var authClient = new FirebaseSimpleLogin(myRef, function(error, user) { 
+  var authClient = new FirebaseSimpleLogin(refRoot, function(error, user) { 
     if (error) {
       console.log(error);
     } else if (user) {
@@ -29,7 +29,7 @@
       // check users firebase if user exists
       if ( isNewUser ) {
         // save new user's profile into Firebase under their user_id
-        myRef.set({
+        refRoot.set({
           provider: user.provider,
           providerId: user.id,
           displayName: user.displayName,
@@ -39,7 +39,11 @@
           picUrl: user.thirdPartyUserData.picture.data.url
         });
       }
+<<<<<<< HEAD
         currentUser = user.uid;
+=======
+        // currentUser = user.uid;
+>>>>>>> b3da28c
         console.log("User ID: " + user.uid + ", Provider: " + user.provider);
     } else {
       // user is logged out
@@ -120,13 +124,13 @@ postsRef.on('value', function (snapshot) {
 
 
 
-$(".blah").on('click', function() {
+$(".add-meets-criteria").on('click', function() {
   $.each(userObject, function (userId, singleUserObject) {
     
     if ( singleUserObject.gender === "female" && singleUserObject.age > 21 && singleUserObject.age < 30) {
       console.log(singleUserObject.firstName);
       // store user in "meets_criteria" table of specified user
-      stephanRef = new Firebase("https://tinder.firebaseio.com/users/facebook%3A10152545844168859/meets_criteria/" + userId);
+      stephanRef = new Firebase("https://tinder.firebaseio.com/users/" + currentUser + "meets_criteria/" + userId);
 
       stephanRef.set( {
          age: singleUserObject.age,
@@ -140,7 +144,7 @@ $(".blah").on('click', function() {
   });
 });
 
-var newUserObject = new Firebase("https://tinder.firebaseio.com/users/facebook%3A10152545844168859/meets_criteria");
+var newUserObject = new Firebase("https://tinder.firebaseio.com/users/" + currentUser + "/meets_criteria");
 newUserObject.on('value', function (snapshot) {
   newUserObject = snapshot.val();
 });
@@ -160,18 +164,15 @@ $(".show-meets-criteria").on('click', function() {
     // attr class="userId" value/id/name="like/disklike"
     // on 'click', store value of button in Stephan's "likes" or "dislikes"
     $("#like").on('click', function() {
-      var likePerson = new Firebase("https://tinder.firebaseio.com/users/facebook%3A10152545844168859/likes/" + userId);
-      var linkMeetsCriteria = new Firebase("https://tinder.firebaseio.com/users/facebook%3A10152545844168859/meets_criteria/" + userId);
+      var likePerson = new Firebase("https://tinder.firebaseio.com/users/" + currentUser + "/likes/" + userId);
+      var linkMeetsCriteria = new Firebase("https://tinder.firebaseio.com/users/" + currentUser + "/likes/" + "/meets_criteria/" + userId);
       console.log(userId);
       likePerson.set(true);
-      // likePerson.update( userId = true );
-      // likePerson.push( newUserObject[userId] = true );
-      // likePerson.update( {uid: userDetails.uid, value: true} );
       linkMeetsCriteria.remove();
     });
 
     $("#dislike").on('click', function() {
-      var dislikePerson = new Firebase("https://tinder.firebaseio.com/users/facebook%3A10152545844168859/dislikes");
+      var dislikePerson = new Firebase("https://tinder.firebaseio.com/users/" + currentUser + "/dislikes");
       console.log(likePerson);
       dislikePerson.push( userId = true );
     });
@@ -214,13 +215,9 @@ $(".show-meets-criteria").on('click', function() {
   //   $(".user_img").attr('src', snap.val());
   // });
 
-  var myRef = new Firebase("https://tinder.firebaseio.com/users/facebook:10152545844168859");
-  var myDataRef = myRef.child("preferences");
+  var refRoot = new Firebase("https://tinder.firebaseio.com/users/" + currentUser);
+  var myDataRef = refRoot.child("preferences");
 
-
-  // + currentUser.uid;
-
-  // var myDataRef = new Firebase(updateUrl);
   
   $('#submit-btn').on('click', function() {
     var min_age = $('#min_age').val();
@@ -242,15 +239,15 @@ $(".show-meets-criteria").on('click', function() {
 
   $("#show-matches").on('click', function() {
 
-    var myRef = new Firebase("https://tinder.firebaseio.com/users/facebook:10152545844168859/likes");
+    var refRoot = new Firebase("https://tinder.firebaseio.com/users/" + currentUser + "/likes/");
 
-    myRef.on('value', function(snap) {
-      myRef = snap.val();
-      // myRef is an object of { uid: true, uid2: true }
+    refRoot.on('value', function(snap) {
+      refRoot = snap.val();
+      // refRoot is an object of { uid: true, uid2: true }
     });
 
-    $.each(myRef, function(key, value) {
-      var doesOtherPersonLikeMe = "https://tinder.firebaseio.com/users/" + key + "/likes/" + "facebook:10152545844168859";
+    $.each(refRoot, function(key, value) {
+      var doesOtherPersonLikeMe = "https://tinder.firebaseio.com/users/" + key + "/likes/" + currentUser;
 
       if ( doesOtherPersonLikeMe ) {
         console.log(key + " likes me");
@@ -264,10 +261,15 @@ $(".show-meets-criteria").on('click', function() {
   });
     
 // Stephan chat with Amber
+var currentChatUser;
 
 $("#chat-submit").on('click', function() {
 
-  var chatRef = new Firebase("https://tinder.firebaseio.com/chats/facebook%3A10152545844168859/-JXo0RWK9pGzARGeMec_"); 
+  // make person active
+  // get value from the div's ID (userID)
+  // store value in currentChatUser variable
+
+  var chatRef = new Firebase("https://tinder.firebaseio.com/chats/" + currentUser + "/" + currentChatUser); 
 
   var chatMessage = $("#chat-message").val();
 
@@ -279,7 +281,7 @@ $("#chat-submit").on('click', function() {
 });
 
 
-var chatRef = new Firebase("https://tinder.firebaseio.com/chats/facebook:10152545844168859/-JXo0RWK9pGzARGeMec_"); 
+var chatRef = new Firebase("https://tinder.firebaseio.com/chats/" + currentUser + "/" + currentChatUser); 
 chatRef.on('value', function(snapshot) {
   chatRef = snapshot.val();
 });
@@ -310,10 +312,7 @@ function geoSuccess(p) {
         ", longitude " + p.coords.longitude + 
         ", accuracy " + p.coords.accuracy );
 
-  // connect to Firebase
-  // store p.coords
-
-  var refLocation = new Firebase("https://tinder.firebaseio.com/geoLocation/facebook:10152545844168859/");
+  var refLocation = new Firebase("https://tinder.firebaseio.com/geoLocation/" + currentUser);
 
   refLocation.set({
     latitude: p.coords.latitude,
@@ -373,9 +372,54 @@ function geoSuccess(p) {
   // }, function(error) {
   //   console.log("Error: " + error);
   // });
+<<<<<<< HEAD
 
 }
 
+
+var location1 = [];
+// [latitude, longitude];
+var location2 = [];
+// [latitude, longitude];
+
+var coords;
+refCoords = new Firebase("https://tinder.firebaseio.com/geoLocation/facebook:10152545844168859/");
+refCoords.on('value', function(snapshot) {
+  coords = snapshot.val();
+  location1.push(coords.latitude, coords.longitude);
+});
+
+var coords2;
+refCoords2 = new Firebase("https://tinder.firebaseio.com/geoLocation/-JXo0RWK9pGzARGeMec_");
+refCoords2.on('value', function(snapshot) {
+  coords2 = snapshot.val();
+  location2.push(coords2.latitude, coords2.longitude);
+});
+
+function distance (location1, location2) {
+  // validateLocation(location1);
+  // validateLocation(location2);
+
+  var radius = 6371; // Earth's radius in kilometers
+  // locationTwo.latitude - locationOne.latitude 
+  var latDelta = degreesToRadians(location2[0] - location1[0]);
+ // locationTwo.longitude - locationOne.longitude 
+  var lonDelta = degreesToRadians(location2[1] - location1[1]);
+=======
+>>>>>>> b3da28c
+
+
+  var a = (Math.sin(latDelta / 2) * Math.sin(latDelta / 2)) +
+          (Math.cos(degreesToRadians(location1[0])) * Math.cos(degreesToRadians(location2[0])) *
+          Math.sin(lonDelta / 2) * Math.sin(lonDelta / 2));
+
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+  return radius * c;
+}
+
+<<<<<<< HEAD
+=======
 
 var location1 = [];
 // [latitude, longitude];
@@ -416,6 +460,7 @@ function distance (location1, location2) {
   return radius * c;
 }
 
+>>>>>>> b3da28c
 $('.calculate-distance').on('click', function() {
   var distanceBetween = distance(location1, location2);
   console.log(distanceBetween);
@@ -492,6 +537,7 @@ geoQuery.on("key_exited", function(key, location, distance) {
 // Canceling queries
 // Dealing with keys which move around within a query
 
+<<<<<<< HEAD
 }
 =======
 >>>>>>> parent of be39f84... added geolocation and chat functionality
@@ -499,3 +545,6 @@ geoQuery.on("key_exited", function(key, location, distance) {
 >>>>>>> parent of be39f84... added geolocation and chat functionality
 =======
 >>>>>>> parent of be39f84... added geolocation and chat functionality
+=======
+}
+>>>>>>> b3da28c
